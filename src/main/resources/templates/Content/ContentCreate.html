@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ContentCreate</title>
+    <link rel="stylesheet" , href="/CSS/index.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"/>
+
+    <script src="/JS/jquery-3.4.1.min.js"></script>
+
+    <!--Load HTML Files-->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#header").load("header");
+            $("#leftSidebar").load("leftSidebar");
+        });
+    </script>
+    <!--rich text editor CDN    -->
+    <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/ko.js"></script>
+
+    <!--rich text editor 플러그인    -->
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/plugins/FileBrowserPlugin.d.ts"> </script>
+
+</head>
+<body>
+<div id="header"></div>
+<div class="contents">
+    <div id="leftSidebar"></div>
+    <div class="main-contents-container">
+        <div class="main-contents">
+            <!-- ------------------Content-------------------------------- -->
+            <h1>ContentCreate</h1>
+            <form action="/Content/ContentCreate" method="get">
+                제목 : <input id="inputTitle" type="text" name="title"> <br>
+                <div id="inputTitle_check"></div>
+                작성자 : <input id="inputWriter" type="text" name="writer"> <br>
+                <div id="inputWriter_check"></div>
+                카테고리1:
+                <select name="category" size="1" onchange="chageCategorySelect()">
+                    <option value="일상">일상</option>
+                    <option value="공부">공부</option>
+                    <option value="커리어">커리어</option>
+                </select>
+
+                카테고리2:
+                <select name="subCategory" size="1">
+                    <option value="생각">생각</option>
+                    <option value="놀기">놀기</option>
+                </select>
+
+                <textarea id="inputContent" name="content"></textarea><br>
+                <div id="inputContent_check"></div>
+
+                <input type="submit" value="등록" onclick="return checkValue__(false)">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script th:src="|/JS/CreateContent_New.js?v=1.0.1.4|"></script>
+
+<script>
+    function chageCategorySelect(){
+        var objSel = document.getElementsByName("subCategory")[0];
+        //alert(objSel.options[i].text +"//"+ objSel.options[i].value +"//"+ i);
+        for(i=objSel.length; i>=0; i--){
+            objSel.options[i]=null;
+        }
+        var selectCategory = document.getElementsByName("category")[0];
+        // select element에서 선택된 option의 value가 저장된다.
+        var selectValue = selectCategory.options[selectCategory.selectedIndex].value;
+        if(selectValue == "공부"){
+            var option1 = document.createElement("option");
+            option1.text = "알고리즘";
+            option1.value = "알고리즘";
+            var option2 = document.createElement("option");
+            option2.text = "웹계발";
+            option2.value = "웹계발";
+            var option3 = document.createElement("option");
+            option3.text = "오류";
+            option3.value = "오류";
+
+            objSel.options.add(option1);
+            objSel.options.add(option2);
+            objSel.options.add(option3);
+        }
+        else if(selectValue == "커리어"){
+            var option1 = document.createElement("option");
+            option1.text = "취업뉴스";
+            option1.value = "취업뉴스";
+            var option2 = document.createElement("option");
+            option2.text = "자소서";
+            option2.value = "자소서";
+            var option3 = document.createElement("option");
+            option3.text = "포트폴리오";
+            option3.value = "포트폴리오";
+
+            objSel.options.add(option1);
+            objSel.options.add(option2);
+            objSel.options.add(option3);
+        }
+        else{
+            var option1 = document.createElement("option");
+            option1.text = "생각";
+            option1.value = "생각";
+            var option2 = document.createElement("option");
+            option2.text = "놀기";
+            option2.value = "놀기";
+            objSel.options.add(option1);
+            objSel.options.add(option2);
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ContentModify</title>
+    <link rel="stylesheet" , href="/CSS/index.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"/>
+
+    <script src="/JS/jquery-3.4.1.min.js"></script>
+    <!--Load HTML Files-->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#header").load("header");
+            $("#leftSidebar").load("leftSidebar");
+        });
+    </script>
+    <!--rich text editor CDN    -->
+    <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/ko.js"></script>
+</head>
+<body>
+<div id="header"></div>
+<div class="contents">
+    <div id="leftSidebar"></div>
+    <div class="main-contents-container">
+        <div class="main-contents">
+            <!-- ------------------Content-------------------------------- -->
+            <h1>ContentModify</h1>
+            <form th:action="@{'/Content/ContentModifyUpdate/' + ${contentDto.id}}" method="get">
+                <input type="hidden" name="_method" value="put"/>
+                <input type="hidden" name="id" th:value="${contentDto.id}"/>
+
+                제목 : <input id="inputTitle" type="text" name="title" th:value="${contentDto.title}"> <br>
+                <div id="inputTitle_check"></div>
+                작성자 : <input id="inputWriter" type="text" name="writer" th:value="${contentDto.writer}"> <br>
+                <div id="inputWriter_check"></div>
+
+                카테고리1:
+                <select name="category" size="1" onchange="chageCategorySelect()">
+                    <option th:value="${contentDto.category}" th:text="${contentDto.category}"></option>
+                </select>
+                카테고리2:
+                <select name="subCategory" size="1">
+                    <option th:value="${contentDto.subCategory}" th:text="${contentDto.subCategory}"></option>
+                </select>
+
+                <textarea id="inputContent" name="content" ></textarea><br>
+                <div id="inputContentcheck"></div>
+
+                <input type="submit" value="수정" onclick="return checkValue__(true)">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script th:src="|/JS/CreateContent_New.js|"></script>
+<script>editor.setContents("[[${contentDto.content}]]");</script>
+</html>

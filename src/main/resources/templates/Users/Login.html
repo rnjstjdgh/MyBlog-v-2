@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <link rel="stylesheet" href="/CSS/login.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <script src="/JS/jquery-3.4.1.min.js"></script>
+
+    </head>
+<body>
+    <div class="form-box">
+        <h1><a href = "/">My Blog</a></h1>
+        <div class="login-page">
+            <form class="login-form" action="/User/Login" method="post">
+            	<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                <div class="input-box">
+                    <i class="far fa-envelope"></i>
+                    <input id = "inputId" type="text" name="username" placeholder="아이디" autocomplete = 'none'>
+                    <p class = "errmsg">아이디를 입력해 주세요.</p>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-key"></i>
+                    <input id="inputPw" type="password" name="password" placeholder="비밀번호">
+                    <p class = "errmsg">비밀번호를 입력해 주세요.</p>
+                    <span class="eye" onclick="viewPassword()">
+                        <i id="hide1" class="far fa-eye"></i>
+                        <i id="hide2" class="far fa-eye-slash"></i>
+                    </span>
+                </div>
+                <p th:text="${loginFailureError}" id="loginError"></p>
+                <button class="login-btn" type="submit" onclick="return checkValue()">로그인</button>
+<!--            	<p class="message"><a href="/member/signup">회원가입</a></p>-->
+            </form>
+
+        </div>
+    </div>
+    
+    <script src="/JS/loginform_checkValue.js"></script>
+    <script src="/JS/loginform_viewPassword.js"></script>
+</body>
+
+</html>

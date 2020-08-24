@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/CSS/headers.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <script src='/JS/jquery-3.4.1.min.js'></script>
+</head>
+
+<body>
+<div class="header">
+    <div class="header-container">
+        <div class="brand">
+            <div class="brand">
+                <a  href = '/'>
+                    <i class="fas fa-basketball-ball fa-2x" style='color : #495057'></i>
+                </a>
+                <a class='brand-name' href = '/'>Blog</a>
+            </div>
+        </div>
+        <div class="search-container">
+            <input type='text' placeholder="search for..."></input>
+            <button><i class="fas fa-search" style='color : white'></i></button>
+        </div>
+        <div class="user-info">
+            <div sec:authorize="isAnonymous()"  class="user-state user-login">
+                <div class="user-logout-txt">
+                    <a th:href="@{/User/Login}">로그인</a>
+                </div>
+            </div>
+            <div sec:authorize="hasRole('ROLE_ADMIN')" class="user-state  user-logout">
+                <div class="user-logout-txt">
+                    <a th:href="@{/User/Logout}">로그아웃</a>
+                </div>
+
+            </div>
+            <div class="user-profile " style='margin-left : 1rem'>
+                <div class="profile-img"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

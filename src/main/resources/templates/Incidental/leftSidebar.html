@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <link rel="stylesheet" href="/CSS/leftsidebar.css">
+</head>
+
+<body>
+    <div class="leftside">
+        <ul class="sidebar-menu">
+            <div th:each="category:${categoryList}">
+                <hr>
+                <li class = "sidevar-menu-li"><a th:href="@{/Content/ContentBoard(category=${category.category1},,subCategory='total')}"><span th:text="${category.category1}"></span></a></li>
+                <div th:each="subCategory:${category.category2List}">
+                    <li class = "sidevar-menu-li">
+                        <a th:href="@{/Content/ContentBoard(category=${category.category1},subCategory=${subCategory})}">
+                            <i class="fas fa-arrow-right"></i><span th:text="${subCategory}"></span>
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </ul>
+    </div>
+</body>
+</html>

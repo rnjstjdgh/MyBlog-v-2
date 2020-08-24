@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ContentBoard</title>
+    <link rel="stylesheet" , href="/CSS/index.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"/>
+    <link rel="stylesheet" href="/CSS/board.css">
+
+    <script src="/JS/jquery-3.4.1.min.js"></script>
+    <script src="/JS/ContentBoard.js"></script>
+
+    <!--Load HTML Files-->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#header").load("header");
+            $("#leftSidebar").load("leftSidebar");
+        });
+    </script>
+</head>
+<body>
+<div id="header"></div>
+<div class="contents">
+    <div id="leftSidebar"></div>
+    <div class="main-contents-container">
+        <div class="main-contents">
+            <!-- ------------------Content-------------------------------- -->
+            <div th:if="${not #strings.isEmpty(category)}">
+                <h1 th:text=" ${category}+' >> ' + ${subCategory}"></h1>
+            </div>
+            <div th:if="${#strings.isEmpty(category)}">
+                <h1 th:text="total"></h1>
+            </div>
+            <div id="wrap">
+                <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/Content/ContentCreate}">글쓰기</a>
+
+                <form action="/Content/ContentSearch" method="GET">
+                    <div class="search">
+                        <input name="keyword" id="keywordStr" type="text" placeholder="검색어를 입력해주세요">
+                        <input name="category" type="hidden" th:value="${category}">
+                        <input name="subCategory" type="hidden" th:value="${subCategory}">
+                    </div>
+                    <button onclick="return checkKeywordEmpty()">검색하기</button>
+                    <div id="inputKeyword_check"></div>
+                </form>
+
+                <table>
+                    <thead>
+                    <tr>
+                        <th class="one wide">번호</th>
+                        <th class="ten wide">글제목</th>
+                        <th class="two wide">작성자</th>
+                        <th class="three wide">작성일</th>
+                        <th class="three wide">카테고리1</th>
+                        <th class="three wide">카테고리2</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <!-- CONTENTS !-->
+                    <tr th:each="content : ${contentDtoList}">
+                        <td>
+                            <span th:text="${content.id}"></span>
+                        </td>
+                        <td>
+                            <a th:href="@{'/Content/ContentShow/' + ${content.id}}">
+                                <span th:text="${content.title}"></span>
+                            </a>
+                        </td>
+                        <td>
+                            <span th:text="${content.writer}"></span>
+                        </td>
+                        <td>
+                            <span th:text="${#temporals.format(content.createDate, 'yyyy-MM-dd HH:mm')}"></span>
+                        </td>
+                        <td>
+                            <span th:text="${content.category}"></span>
+                        </td>
+                        <td>
+                            <span th:text="${content.subCategory}"></span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div>
+    <span th:each="pageNum : ${pageList}" th:inline="text">
+        <a th:href="@{'/Content/ContentBoard?Page=' + ${pageNum} +'&category=' + ${category} + '&subCategory=' + ${subCategory}}">[[${pageNum}]]</a>
+    </span>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+/*video{*/
+/*    width: 310px;*/
+/*    height: 189px;*/
+/*}*/
+
+/*.content-head a{*/
+/*    font-size: 13px;*/
+/*    color: gray;*/
+/*}*/
+
+/*.content-hotvideo{*/
+/*    display:flex;*/
+/*}*/
+
+/*.content-hotvideo-group{*/
+/*    display: block;*/
+/*    float: left;*/
+/*    margin-left : 10px;*/
+/*    word-break:break-all;*/
+/*    width: 320px;*/
+/*    margin-left: calc(16px / 2);*/
+/*    margin-right: calc(16px / 2);*/
+/*    margin-bottom: 40px;*/
+/*}*/
+
+/*.content-hotvideo-group-videotext{*/
+/*    word-break:break-all;*/
+/*    text-align: center;*/
+/*    margin-top : 0;*/
+/*}*/
+
+/*.content-hotvideo-group-videotext a{*/
+/*    color:black;*/
+/*}*/
+
+.contents {
+    margin: 0 auto;
+    margin-top: 0;
+    width: 100%;
+    left: 0px;
+}
+
+.main-contents-container {
+    position: absolute;
+    left: 0;
+    padding-top: 56px;
+    padding-left: 20px;
+    margin-left: 150px;
+    display: flex;
+    justify-content: center;
+    width: 88%;
+    min-width: 1336px;
+}
+
+.main-contents {
+    display: flex;
+    margin-top: 15px;
+    flex-direction: column;
+    justify-content: center;
+    width: 1250px;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+}
+
+.calendar-header h3 {
+    margin-top: 12px;
+}
+
+.calendar-header a {
+    margin-left: 1rem;
+    font-size: 0.75rem;
+    text-decoration: none;
+    color: gray;
+}
+
+/* Calendar crawling styling */
+/* import calendar.css */
+/* /Calendar crawling styling */
+
+/* video styling  */
+
+.video-container {
+    margin-top: 1.5rem;
+    border-bottom : 1px solid #e9ecef;
+}
+video {
+    width: 310px;
+    height: 189px;
+}
+
+.video-groups {
+    display: flex;
+}
+
+.video-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 330px;
+    margin-left: 10px;
+    word-break: break-all;
+    margin-left: calc(16px / 2);
+    margin-right: calc(16px / 2);
+    margin-bottom: 40px;
+}
+
+.video-group p a {
+    text-decoration: none;
+    color: black;
+}
+
+/* /video styling  */
+
+
