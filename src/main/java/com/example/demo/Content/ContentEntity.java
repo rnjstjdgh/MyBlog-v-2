@@ -22,7 +22,8 @@ public class ContentEntity extends TimeEntity {
     @Column(length = 10, nullable = false)
     private String writer;
 
-    @Column(length = 100, nullable = false)
+    @Lob
+    @Column(nullable = false)
     private String title;
 
     @Column(length = 10, nullable = false)

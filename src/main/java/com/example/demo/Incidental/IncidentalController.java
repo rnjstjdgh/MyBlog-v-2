@@ -19,7 +19,7 @@ public class IncidentalController {
 
     @RequestMapping("/")
     public String index(){
-        return "/Incidental/index.html";
+        return "Incidental/index";
     }
 
     @RequestMapping("/leftSidebar")
@@ -29,12 +29,12 @@ public class IncidentalController {
 
         model.addAttribute("categoryList",categoryDtoList);
 
-        return "/Incidental/leftSidebar";
+        return "Incidental/leftSidebar";
     }
 
     @RequestMapping("/header")
     public String loadHeader() {
-        return "/Incidental/header";
+        return "Incidental/header";
     }
 
 
@@ -43,12 +43,12 @@ public class IncidentalController {
         List<CategoryDto> categoryDtoList = categoryService.GetCategoryList();
 
         model.addAttribute("categoryList",categoryDtoList);
-        return "/Incidental/leftSidebar";
+        return "Incidental/leftSidebar";
     }
 
     @RequestMapping("/Content/header")
     public String DailyLife_loadHeader1() {
-        return "/Incidental/header";
+        return "Incidental/header";
     }
 
     @RequestMapping("/Content/ContentShow/leftSidebar")
@@ -56,12 +56,12 @@ public class IncidentalController {
         List<CategoryDto> categoryDtoList = categoryService.GetCategoryList();
 
         model.addAttribute("categoryList",categoryDtoList);
-        return "/Incidental/leftSidebar";
+        return "Incidental/leftSidebar";
     }
 
     @RequestMapping("/Content/ContentShow/header")
     public String DailyLife_loadHeader2() {
-        return "/Incidental/header";
+        return "Incidental/header";
     }
 
     @RequestMapping("/Content/ContentModify/leftSidebar")
@@ -69,12 +69,12 @@ public class IncidentalController {
         List<CategoryDto> categoryDtoList = categoryService.GetCategoryList();
 
         model.addAttribute("categoryList",categoryDtoList);
-        return "/Incidental/leftSidebar";
+        return "Incidental/leftSidebar";
     }
 
     @RequestMapping("/Content/ContentModify/header")
     public String DailyLife_loadHeader3() {
-        return "/Incidental/header";
+        return "Incidental/header";
     }
 
 }

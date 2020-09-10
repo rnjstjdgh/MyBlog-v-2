@@ -14,19 +14,19 @@ public class UserController {
     private UserService userService;
 
     // 로그인 페이지
-    @RequestMapping(value = "/User/Login")
+    @RequestMapping(value = "User/Login")
     public String dispLogin(HttpServletRequest request ,Model model) {
         String error = request.getParameter("error");
         if(error != null) {//로그인 실패 상황
             model.addAttribute("loginFailureError", "잘못된 회원정보 입니다");
         }
-        return "/Users/Login";
+        return "Users/Login";
     }
 
     // 접근 거부 페이지
-    @GetMapping("/User/Denied")
+    @GetMapping("User/Denied")
     public String dispDenied() {
-        return "/Denied";
+        return "Denied";
     }
 
 

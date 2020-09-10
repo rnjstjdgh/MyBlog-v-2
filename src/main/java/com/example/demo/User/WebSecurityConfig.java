@@ -36,15 +36,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 // 페이지 권한 설정
                 .antMatchers("/Admin/**").hasRole("ADMIN")
-                .antMatchers("/DailyLife/DailyLifeCreate/**").hasRole("ADMIN")
-                .antMatchers("/DailyLife/DailyLifeModify/**").hasRole("ADMIN")
-                .antMatchers("/DailyLife/DailyLifeDelete/**").hasRole("ADMIN")
-                .antMatchers("/Study/StudyCreate/**").hasRole("ADMIN")
-                .antMatchers("/Study/StudyModify/**").hasRole("ADMIN")
-                .antMatchers("/Study/StudyDelete/**").hasRole("ADMIN")
-                .antMatchers("/Carrer/CarrerCreate/**").hasRole("ADMIN")
-                .antMatchers("/Carrer/CarrerModify/**").hasRole("ADMIN")
-                .antMatchers("/Carrer/CarrerDelete/**").hasRole("ADMIN")
+                .antMatchers("/Content/ContentCreate/**").hasRole("ADMIN")
+                .antMatchers("/Content/ContentModify/**").hasRole("ADMIN")
+                .antMatchers("/Content/ContentDelete/**").hasRole("ADMIN")
                 .antMatchers("/**").permitAll()
                 .and()
                 // 로그인 설정

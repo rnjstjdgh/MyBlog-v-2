@@ -15,7 +15,7 @@ public class ContentController {
     @Autowired
     private ContentService contentService;
 
-    @RequestMapping("/Content/ContentBoard")
+    @RequestMapping("Content/ContentBoard")
     public String ShowContentBoard(Model model, @RequestParam(value = "Page",defaultValue = "1") Integer pageNum, HttpServletRequest request){
         String category = request.getParameter("category");
         String subCategory = request.getParameter("subCategory");
@@ -36,27 +36,27 @@ public class ContentController {
         model.addAttribute("pageList",pageList);
         model.addAttribute("currentPageNum",pageNum);
 
-        return "/Content/ContentBoard";
+        return "Content/ContentBoard";
     }
 
-    @GetMapping("/Content/ContentShow/{contentId}")
+    @GetMapping("Content/ContentShow/{contentId}")
     public String ShowSingleContent(@PathVariable("contentId") Long id, Model model){
         ContentDto contentDto = contentService.GetContent(id);
         model.addAttribute("contentDto",contentDto);
-        return "/Content/ContentShow";
+        return "Content/ContentShow";
     }
 
-    @GetMapping("/Content/ContentCreate")
+    @GetMapping("Content/ContentCreate")
     public String CreateSingleContent(ContentDto contentDto, Model model){
         if ( contentDto.getTitle() == null) //들어올 때
-            return "/Content/ContentCreate";
+            return "Content/ContentCreate";
         else{   //만들 때
             contentService.SaveContent(contentDto);
-            return "redirect:/Content/ContentBoard";
+            return "redirect:/";
         }
     }
 
-    @GetMapping("/Content/ContentCreate/titleOverlapCheck")
+    @GetMapping("Content/ContentCreate/titleOverlapCheck")
     @ResponseBody
     public Long titleCheck(HttpServletRequest request){
         String title = request.getParameter("title");
@@ -66,7 +66,7 @@ public class ContentController {
         return isPresent;
     }
 
-    @GetMapping("/Content/ContentModify/{contentId}")
+    @GetMapping("Content/ContentModify/{contentId}")
     public String ModifySingleContent(@PathVariable("contentId") Long id, Model model, HttpServletRequest request){
         ContentDto contentDto = contentService.GetContent(id);
         String category = request.getParameter("category");
@@ -79,21 +79,19 @@ public class ContentController {
         return "Content/ContentModify";
     }
 
-    @GetMapping("/Content/ContentModifyUpdate/{contentId}")
+    @GetMapping("Content/ContentModifyUpdate/{contentId}")
     public String ModifySingleUpdate(ContentDto contentDto){
         contentService.SaveContent(contentDto);
-        return "redirect:/Content/ContentBoard";
+        return "redirect:/";
     }
 
-    @GetMapping("/Content/ContentDelete/{contentId}")
+    @GetMapping("Content/ContentDelete/{contentId}")
     public String DeleteSingleContent(@PathVariable("contentId") Long id){
         contentService.DeleteContent(id);
-        return "redirect:/Content/ContentBoard";
+        return "redirect:/";
     }
 
-
-
-    @GetMapping("/Content/ContentSearch")
+    @GetMapping("Content/ContentSearch")
     public String SearchContent(Model model, HttpServletRequest request){
         String keyword = request.getParameter("keyword");
         String category = request.getParameter("category");
