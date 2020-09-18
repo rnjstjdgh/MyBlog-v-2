@@ -26,7 +26,6 @@ document.getElementById('suneditor_inputContent').style.cssText = "width: auto";
 //제목, 작성자, 내용 빈칸 확인
 function checkValue__(isModify) {
     var titleFlag = false;
-    var titleOverlapFalg = false;
     var writerFlag = false;
     var contentFlag = false;
 
@@ -36,33 +35,9 @@ function checkValue__(isModify) {
         $("#inputTitle_check").text("필수정보입니다.");
         $("#inputTitle_check").css("color","red");
     }
-    else if(!isModify){
-        //제목이 빈칸이 아니고 변경이 아니라 생성이라면 => 이제 여기서 중복검사 해야한다.
-        var selectCategory = document.getElementsByName("category")[0];
-        var category = selectCategory.options[selectCategory.selectedIndex].value;
-        var selectSubCategory = document.getElementsByName("subCategory")[0];
-        var subCategory = selectSubCategory.options[selectSubCategory.selectedIndex].value;
-
-        titleFlag = true;
-        $.ajax({
-            url:'/Content/ContentCreate/titleOverlapCheck?title='+title + '&category=' +category+'&subCategory='+subCategory ,
-            type: 'get',
-            async: false,
-            success : function (data) {
-                if(data == 1){
-                    $("#inputTitle_check").text("중복된 제목입니다.(해당 카테고리에 해당 제목이 이미 존재합니다)");
-                    $("#inputTitle_check").css("color","red");
-                }
-                else {
-                    titleOverlapFalg = true;
-                    $("#inputTitle_check").text("");
-                }
-            }
-        })
-    }
     else{   //변경인데 빈칸이 아님
         titleFlag = true;
-        titleOverlapFalg = true;
+        $("#inputTitle_check").text("");
     }
 
     //작성자 빈칸 확인
@@ -91,7 +66,6 @@ function checkValue__(isModify) {
     console.log(titleFlag)
     console.log(writerFlag)
     console.log(contentFlag)
-    console.log(titleOverlapFalg)
 
-    return titleFlag && writerFlag && contentFlag && titleOverlapFalg;
+    return titleFlag && writerFlag && contentFlag ;
 }

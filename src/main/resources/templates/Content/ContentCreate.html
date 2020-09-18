@@ -43,6 +43,7 @@
                     <option value="일상">일상</option>
                     <option value="공부">공부</option>
                     <option value="커리어">커리어</option>
+                    <option value="CIT">CIT</option>
                 </select>
 
                 카테고리2:
@@ -72,6 +73,7 @@
         var selectCategory = document.getElementsByName("category")[0];
         // select element에서 선택된 option의 value가 저장된다.
         var selectValue = selectCategory.options[selectCategory.selectedIndex].value;
+        // alert(selectValue);
         if(selectValue == "공부"){
             var option1 = document.createElement("option");
             option1.text = "알고리즘";
@@ -102,13 +104,23 @@
             objSel.options.add(option2);
             objSel.options.add(option3);
         }
-        else{
+        else if(selectValue == "일상"){
             var option1 = document.createElement("option");
             option1.text = "생각";
             option1.value = "생각";
             var option2 = document.createElement("option");
             option2.text = "놀기";
             option2.value = "놀기";
+            objSel.options.add(option1);
+            objSel.options.add(option2);
+        }
+        else{
+            var option1 = document.createElement("option");
+            option1.text = "개발";
+            option1.value = "개발";
+            var option2 = document.createElement("option");
+            option2.text = "수업";
+            option2.value = "수업";
             objSel.options.add(option1);
             objSel.options.add(option2);
         }
