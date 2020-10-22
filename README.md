@@ -8,7 +8,7 @@
 
 1) Service-Layer에서 @Transactional 남용에 대한 고찰
 
-2) Controller-Layer에서 GetMapping 남용에 대한 고찰
+2) Controller-Layer에서 @GetMapping 남용에 대한 고찰
 
 3) Controller을 좀 더 RestFull하게 바꿀 수 있는 방법에 대한 고찰
 
