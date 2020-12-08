@@ -24,4 +24,4 @@
 
 7) test기반 구현 
 
-8) naver cloud => AWS free로 이전
+8) naver cloud => AWS free로 이전 (이전 완료)
