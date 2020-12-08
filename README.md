@@ -25,3 +25,5 @@
 7) test기반 구현 
 
 8) naver cloud => AWS free로 이전 (이전 완료)
+
+9) github action기능으로 deploy 자동화 하기
