@@ -12,6 +12,7 @@ public interface ContentRepository extends JpaRepository<ContentEntity, Long> {
     long countByCategory(String category);
 
     Page<ContentEntity> findByCategoryAndSubCategory(String category, String subCategory, Pageable createDate);
+
     long countByCategoryAndSubCategory(String category, String subCategory);
 
     List<ContentEntity> findByTitle(String title);
@@ -23,11 +24,7 @@ public interface ContentRepository extends JpaRepository<ContentEntity, Long> {
 
     List<ContentEntity> findByCategoryAndTitleContaining(String category, String keyword);
 
-
-
     List<ContentEntity> findByCategoryAndSubCategoryAndTitleContaining(String category,String subCategory, String keyword);
-
-
 
     List<ContentEntity> findBySubCategory(String subCategory);
 }
