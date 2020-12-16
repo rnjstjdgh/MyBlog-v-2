@@ -15,9 +15,19 @@
                 <li class = "sidevar-menu-li"><a th:href="@{/Content/ContentBoard(category=${category.category1},,subCategory='total')}"><span th:text="${category.category1}"></span></a></li>
                 <div th:each="subCategory:${category.category2List}">
                     <li class = "sidevar-menu-li">
-                        <a th:href="@{/Content/ContentBoard(category=${category.category1},subCategory=${subCategory})}">
-                            <i class="fas fa-arrow-right"></i><span th:text="${subCategory}"></span>
-                        </a>
+                        <div th:if="${!subCategory.equals('커리어일기')}">
+                            <a th:href="@{/Content/ContentBoard(category=${category.category1},subCategory=${subCategory})}">
+                                <i class="fas fa-arrow-right"></i><span th:text="${subCategory}"></span>
+                            </a>
+                        </div>
+                        <div th:if="${subCategory.equals('커리어일기')}">
+                            <div sec:authorize="hasRole('ROLE_ADMIN')">
+                                <a th:href="@{/Content/ContentBoard(category=${category.category1},subCategory=${subCategory})}">
+                                    <i class="fas fa-arrow-right"></i><span th:text="${subCategory}"></span>
+                                </a>
+                            </div>
+                        </div>
+
                     </li>
                 </div>
             </div>

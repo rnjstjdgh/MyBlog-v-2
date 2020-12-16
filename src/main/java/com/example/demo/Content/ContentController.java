@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -16,9 +17,12 @@ public class ContentController {
     private ContentService contentService;
 
     @RequestMapping("Content/ContentBoard")
-    public String ShowContentBoard(Model model, @RequestParam(value = "Page",defaultValue = "1") Integer pageNum, HttpServletRequest request){
+    public String ShowContentBoard(Principal principal, Model model, @RequestParam(value = "Page",defaultValue = "1") Integer pageNum, HttpServletRequest request){
         String category = request.getParameter("category");
         String subCategory = request.getParameter("subCategory");
+
+        if(subCategory.equals("커리어일기") && principal == null)
+            return "Incidental/NoGrant";    //커리어 일기인데 익명의 사용자이면 => 접근 권한이 없음
 
         if (category == null)
             category = "total";
@@ -39,9 +43,28 @@ public class ContentController {
         return "Content/ContentBoard";
     }
 
+    @GetMapping("Content/ContentSearch")
+    public String SearchContent(Principal principal ,Model model, HttpServletRequest request){
+        String keyword = request.getParameter("keyword");
+        String category = request.getParameter("category");
+        String subCategory = request.getParameter("subCategory");
+        if(subCategory.equals("커리어일기") && principal == null)
+            return "Incidental/NoGrant";    //커리어 일기인데 익명의 사용자이면 => 접근 권한이 없음
+
+        List<ContentDto> contentDtoList;
+        contentDtoList = contentService.SearchContents(keyword,category,subCategory);
+        model.addAttribute("contentDtoList", contentDtoList);
+        model.addAttribute("category",category);
+        model.addAttribute("subCategory",subCategory);
+        return "Content/ContentBoard";
+    }
+
     @GetMapping("Content/ContentShow/{contentId}")
-    public String ShowSingleContent(@PathVariable("contentId") Long id, Model model){
+    public String ShowSingleContent(Principal principal, @PathVariable("contentId") Long id, Model model){
         ContentDto contentDto = contentService.GetContent(id);
+        if(contentDto.getSubCategory().equals("커리어일기") && principal == null)
+            return "Incidental/NoGrant";    //커리어 일기인데 익명의 사용자이면 => 접근 권한이 없음
+
         model.addAttribute("contentDto",contentDto);
         return "Content/ContentShow";
     }
@@ -91,17 +114,5 @@ public class ContentController {
         return "redirect:/";
     }
 
-    @GetMapping("Content/ContentSearch")
-    public String SearchContent(Model model, HttpServletRequest request){
-        String keyword = request.getParameter("keyword");
-        String category = request.getParameter("category");
-        String subCategory = request.getParameter("subCategory");
 
-        List<ContentDto> contentDtoList;
-        contentDtoList = contentService.SearchContents(keyword,category,subCategory);
-        model.addAttribute("contentDtoList", contentDtoList);
-        model.addAttribute("category",category);
-        model.addAttribute("subCategory",subCategory);
-        return "Content/ContentBoard";
-    }
 }
