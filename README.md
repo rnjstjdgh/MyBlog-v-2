@@ -34,11 +34,11 @@
 <summary>
    설치
 </summary>
-* https://velog.io/@damiano1027/Nginx-Nginx%EC%99%80-SpringBoot-%EB%82%B4%EC%9E%A5-Tomcat-%EC%97%B0%EB%8F%99
+
 
 * ![image](https://user-images.githubusercontent.com/41561652/116203687-eb43ca00-a776-11eb-8343-3df4dfd967ce.png)
 
-
+* 참고 링크: https://velog.io/@damiano1027/Nginx-Nginx%EC%99%80-SpringBoot-%EB%82%B4%EC%9E%A5-Tomcat-%EC%97%B0%EB%8F%99
 </details>
 
 <details>
