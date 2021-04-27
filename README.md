@@ -28,14 +28,40 @@
 
 9) github action기능으로 deploy 자동화 하기
 
-10) nginx 서버 도입(https://velog.io/@damiano1027/Nginx-Nginx%EC%99%80-SpringBoot-%EB%82%B4%EC%9E%A5-Tomcat-%EC%97%B0%EB%8F%99)   
+10) nginx 서버 도입
 * ![image](https://user-images.githubusercontent.com/41561652/116195967-da428b00-a76d-11eb-8882-2af5a01433f5.png)
 <details>
 <summary>
    설치
 </summary>
+* https://velog.io/@damiano1027/Nginx-Nginx%EC%99%80-SpringBoot-%EB%82%B4%EC%9E%A5-Tomcat-%EC%97%B0%EB%8F%99
+
+</details>
+
+<details>
+<summary>
+ssl 인증서를 발급받고 443 포트로 https를 적용
+</summary>
    
-   * fdsf
-    * ssl 인증서를 발급받고 443 포트로 https를 적용
-    * 로드밸런싱을 해본다던지
-    * DDos공격 방어를 해본다던지(https://velog.io/@damiano1027/Nginx-Nginx%EC%99%80-SpringBoot-%EB%82%B4%EC%9E%A5-Tomcat-%EC%97%B0%EB%8F%99)
+* ~~
+</details>
+
+
+<details>
+<summary>
+로드밸런싱을 해본다던지
+</summary>
+   
+* ~~
+</details>
+
+
+<details>
+<summary>
+DDos공격 방어를 해본다던지
+</summary>
+   
+* https://velog.io/@damiano1027/Nginx-Nginx%EC%99%80-SpringBoot-%EB%82%B4%EC%9E%A5-Tomcat-%EC%97%B0%EB%8F%99
+</details>
+   
+
