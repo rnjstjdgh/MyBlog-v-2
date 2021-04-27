@@ -27,3 +27,7 @@
 8) naver cloud => AWS free로 이전 (이전 완료)
 
 9) github action기능으로 deploy 자동화 하기
+
+10) nginx 서버 도입
+* ![image](https://user-images.githubusercontent.com/41561652/116195967-da428b00-a76d-11eb-8882-2af5a01433f5.png)
+    * ssl 인증서를 발급받고 443 포트로 https를 적용한다던지, 로드밸런싱을 해본다던지 더 해보자
