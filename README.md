@@ -64,7 +64,7 @@ ssl 인증서를 발급받고 443 포트로 https를 적용
 DDos공격 방어를 해본다던지
 </summary>
    
-* https://velog.io/@damiano1027/Nginx-Nginx%EC%99%80-SpringBoot-%EB%82%B4%EC%9E%A5-Tomcat-%EC%97%B0%EB%8F%99
+* 참고 링크: https://velog.io/@damiano1027/Nginx-Nginx%EC%99%80-SpringBoot-%EB%82%B4%EC%9E%A5-Tomcat-%EC%97%B0%EB%8F%99
 </details>
    
 
