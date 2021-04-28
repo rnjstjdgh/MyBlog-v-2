@@ -46,7 +46,7 @@
 ssl 인증서를 발급받고 443 포트로 https를 적용
 </summary>
    
-* https와 ssl, handshaking, session: https://opentutorials.org/course/228/4894
+* https와 ssl, handshaking, session : https://opentutorials.org/course/228/4894
 </details>
 
 
