@@ -88,6 +88,8 @@ cache 설정
 
 ## 11.  모니터링 해보기  
 
+* 모니터링 데시보드 링크
+
 * 모니터링 대상:
    * node exporter / spring boot / nginx
 
