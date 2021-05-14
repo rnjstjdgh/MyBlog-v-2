@@ -102,11 +102,9 @@ cache 설정
       * https://github.com/rnjstjdgh/MyBlog-v-2/wiki/%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EA%B4%80%EB%A0%A8-%EA%B3%B5%EB%B6%80-%EB%82%B4%EC%9A%A9-%EC%A0%95%EB%A6%AC---alertmanager
    * loki & promtail: 
       * https://github.com/rnjstjdgh/MyBlog-v-2/wiki/%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EA%B4%80%EB%A0%A8-%EA%B3%B5%EB%B6%80-%EB%82%B4%EC%9A%A9-%EC%A0%95%EB%A6%AC---loki-&-promtail
-   * Prometheus: 
-      * https://github.com/rnjstjdgh/MyBlog-v-2/wiki/%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EA%B4%80%EB%A0%A8-%EA%B3%B5%EB%B6%80-%EB%82%B4%EC%9A%A9-%EC%A0%95%EB%A6%AC---Prometheus
+   * Prometheus & Grafana: 
+      * https://github.com/rnjstjdgh/MyBlog-v-2/wiki/%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EA%B4%80%EB%A0%A8-%EA%B3%B5%EB%B6%80-%EB%82%B4%EC%9A%A9-%EC%A0%95%EB%A6%AC---Prometheus-&-grafana
    
-   * grafana:
-      * https://github.com/rnjstjdgh/MyBlog-v-2/wiki/%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EA%B4%80%EB%A0%A8-%EA%B3%B5%EB%B6%80-%EB%82%B4%EC%9A%A9-%EC%A0%95%EB%A6%AC-Grafana
    * nginx: 
       * https://github.com/rnjstjdgh/MyBlog-v-2/wiki/%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EA%B4%80%EB%A0%A8-%EA%B3%B5%EB%B6%80-%EB%82%B4%EC%9A%A9-%EC%A0%95%EB%A6%AC---nginx
 
