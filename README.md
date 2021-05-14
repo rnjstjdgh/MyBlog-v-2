@@ -88,9 +88,8 @@ cache 설정
 
 ## 11.  모니터링 해보기  
 
-* node exporter
-* spring boot
-* nginx
+* 모니터링 대상:
+   * node exporter / spring boot / nginx
 
 * 공부 내용 정리: 
    * https://github.com/rnjstjdgh/MyBlog-v-2/wiki/%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EA%B4%80%EB%A0%A8-%EA%B3%B5%EB%B6%80-%EB%82%B4%EC%9A%A9-%EC%A0%95%EB%A6%AC
