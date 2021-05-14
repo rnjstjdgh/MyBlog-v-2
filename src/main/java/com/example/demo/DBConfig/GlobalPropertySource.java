@@ -7,7 +7,7 @@ import org.springframework.context.annotation.PropertySources;
 
 @Configuration
 @PropertySources({
-        @PropertySource( value = "file:${user.home}/env/config.properties", ignoreResourceNotFound = true), //리눅스 서버용
+        @PropertySource( value = "file:/home/ec2-user/env/config.properties", ignoreResourceNotFound = true), //리눅스 서버용
         @PropertySource( value = "file:c:/dev/config.properties", ignoreResourceNotFound = true )           //윈도우 테스트용
 })
 public class GlobalPropertySource {
