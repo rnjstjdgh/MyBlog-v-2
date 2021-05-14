@@ -87,4 +87,10 @@ cache 설정
    
 
 ## 11.  모니터링 해보기  
+
+* node exporter
+* spring boot
+* nginx
+* 
+
 ## 12.  
