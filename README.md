@@ -66,5 +66,23 @@ DDos공격 방어를 해본다던지
    
 * 참고 링크: https://velog.io/@damiano1027/Nginx-Nginx%EC%99%80-SpringBoot-%EB%82%B4%EC%9E%A5-Tomcat-%EC%97%B0%EB%8F%99
 </details>
+
+<details>
+<summary>
+gzip 압축 설정
+</summary>
+   
+* 참고 링크: https://www.lesstif.com/system-admin/nginx-gzip-59343019.html
+</details>
+
+<details>
+<summary>
+cache 설정
+</summary>
+   
+* 참고 링크: 
+   * https://blog.kjslab.com/175
+   * https://jojoldu.tistory.com/60
+</details>
    
 
