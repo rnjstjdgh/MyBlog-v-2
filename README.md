@@ -91,6 +91,12 @@ cache 설정
 * 모니터링 대상:
    * node exporter / spring boot / nginx
 
+* 개념적인 구성
+* ![image](https://user-images.githubusercontent.com/41561652/118255133-d9885380-b4e6-11eb-89b0-57e00fe5b750.png)
+
+* 구축한 인프라 구조
+* ![image](https://user-images.githubusercontent.com/41561652/118255191-ead16000-b4e6-11eb-906c-844650430622.png)
+
 * 공부 내용 정리: 
    * https://github.com/rnjstjdgh/MyBlog-v-2/wiki/%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EA%B4%80%EB%A0%A8-%EA%B3%B5%EB%B6%80-%EB%82%B4%EC%9A%A9-%EC%A0%95%EB%A6%AC
 
