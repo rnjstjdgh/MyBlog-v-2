@@ -69,15 +69,17 @@ public class ContentController {
         return "Content/ContentShow";
     }
 
-    @GetMapping("Content/ContentCreate")
+    @PostMapping("Content/ContentCreate")
     public String CreateSingleContent(ContentDto contentDto, Model model){
-        if ( contentDto.getTitle() == null) //들어올 때
-            return "Content/ContentCreate";
-        else{   //만들 때
-            contentService.SaveContent(contentDto);
-            return "redirect:/";
-        }
+        contentService.SaveContent(contentDto);
+        return "redirect:/";
     }
+
+    @GetMapping("Content/ContentCreate")
+    public String CreateSingleContentPage(){
+        return "Content/ContentCreate";
+    }
+
 
     @GetMapping("Content/ContentCreate/titleOverlapCheck")
     @ResponseBody
@@ -102,13 +104,13 @@ public class ContentController {
         return "Content/ContentModify";
     }
 
-    @GetMapping("Content/ContentModifyUpdate/{contentId}")
+    @PutMapping("Content/ContentModifyUpdate/{contentId}")
     public String ModifySingleUpdate(ContentDto contentDto){
         contentService.SaveContent(contentDto);
         return "redirect:/";
     }
 
-    @GetMapping("Content/ContentDelete/{contentId}")
+    @DeleteMapping("Content/ContentDelete/{contentId}")
     public String DeleteSingleContent(@PathVariable("contentId") Long id){
         contentService.DeleteContent(id);
         return "redirect:/";

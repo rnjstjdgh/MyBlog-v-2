@@ -33,7 +33,7 @@
         <div class="main-contents">
             <!-- ------------------Content-------------------------------- -->
             <h1>ContentCreate</h1>
-            <form action="/Content/ContentCreate" method="get">
+            <form action="/Content/ContentCreate" method="post">
                 제목 : <input id="inputTitle" type="text" name="title"> <br>
                 <div id="inputTitle_check"></div>
                 작성자 : <input id="inputWriter" type="text" name="writer"> <br>
@@ -54,7 +54,7 @@
 
                 <textarea id="inputContent" name="content"></textarea><br>
                 <div id="inputContent_check"></div>
-
+                <input type="hidden" id="token" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
                 <input type="submit" value="등록" onclick="return checkValue__(false)">
             </form>
         </div>

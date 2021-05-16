@@ -28,7 +28,7 @@
         <div class="main-contents">
             <!-- ------------------Content-------------------------------- -->
             <h1>ContentModify</h1>
-            <form th:action="@{'/Content/ContentModifyUpdate/' + ${contentDto.id}}" method="get">
+            <form th:action="@{'/Content/ContentModifyUpdate/' + ${contentDto.id}}" method="post">
                 <input type="hidden" name="_method" value="put"/>
                 <input type="hidden" name="id" th:value="${contentDto.id}"/>
 
@@ -48,7 +48,7 @@
 
                 <textarea id="inputContent" name="content" ></textarea><br>
                 <div id="inputContentcheck"></div>
-
+                <input type="hidden" id="token" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
                 <input type="submit" value="수정" onclick="return checkValue__(true)">
             </form>
         </div>
