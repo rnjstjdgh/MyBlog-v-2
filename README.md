@@ -88,7 +88,7 @@ cache 설정
 
 ## 11.  모니터링 해보기  
 
-* 모니터링 데시보드 링크
+* 모니터링 데시보드 링크(guest / 12345) 
    1.  linux(node exporter): http://52.79.72.3:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m
    2.  spring boot actuator: http://52.79.72.3:3000/d/vJAZ9jwWk/jvm-micrometer?orgId=1&refresh=5s
    3.  nginx exporter: http://52.79.72.3:3000/d/MsjffzSZz/nginx-by-nginxinc?orgId=1&refresh=5s 
