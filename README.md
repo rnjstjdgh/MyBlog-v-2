@@ -8,7 +8,10 @@
 
 1) Service-Layer에서 @Transactional 남용에 대한 고찰
 
-2) Controller-Layer에서 @GetMapping 남용에 대한 고찰
+2) Controller-Layer에서 @GetMapping 남용에 대한 고찰(해결)
+   * 기존 Post를 적용하던 것이 error가 난 이유
+      * https://okky.kr/article/487431
+   * _csrf 토큰 추가 후 post로 변경   
 
 3) Controller을 좀 더 RestFul하게 바꿀 수 있는 방법에 대한 고찰
 
